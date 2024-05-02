@@ -38,47 +38,9 @@ useEffect(()=>{
                         ))
                     }
                    
-                    {/* --------------------------- */}
-                    {/* <div className=' px-3 lg:px-5 py-3 border rounded-lg border-gray-300 shadow-lg'>
-                      <div>  <img className='rounded-2xl' src={sone1} alt="" /></div>
-                      <div>
-                        <h2 className='font-bold text-2xl'>Electrial System</h2>
-                        <p className='text-orange-600 text-xl font-semibold'>Price: $ 20.00</p>
-                      </div>
-                    </div> */}
-                    {/* ------------------ */}
-                    {/* <div className=' px-3 lg:px-5 py-3 border rounded-lg border-gray-300 shadow-lg'>
-                      <div>  <img className='rounded-2xl' src={sone2} alt="" /></div>
-                      <div>
-                        <h2 className='font-bold text-2xl'>Electrial System</h2>
-                        <p className='text-orange-600 text-xl font-semibold'>Price: $ 20.00</p>
-                      </div>
-                    </div> */}
-                    {/* ----------------------- */}
-                    {/* <div className='px-3 lg:px-5 py-3 border rounded-lg border-gray-300 shadow-lg'>
-                      <div>  <img className='rounded-2xl' src={sone3} alt="" /></div>
-                      <div>
-                        <h2 className='font-bold text-2xl'>Electrial System</h2>
-                        <p className='text-orange-600 text-xl font-semibold'>Price: $ 20.00</p>
-                      </div>
-                    </div> */}
-                    {/* --------------- */}
-                    {/* <div className='px-3 lg:px-5 py-3 border rounded-lg border-gray-300 shadow-lg'>
-                      <div>  <img className='rounded-2xl' src={sone4} alt="" /></div>
-                      <div>
-                        <h2 className='font-bold text-2xl'>Electrial System</h2>
-                        <p className='text-orange-600 text-xl font-semibold'>Price: $ 20.00</p>
-                      </div>
-                    </div> */}
-                    {/* --------------------- */}
-                    {/* <div className='px-3 lg:px-5 py-3 border rounded-lg border-gray-300 shadow-lg'>
-                      <div>  <img className='rounded-2xl' src={sone5} alt="" /></div>
-                      <div>
-                        <h2 className='font-bold text-2xl'>Electrial System</h2>
-                        <p className='text-orange-600 text-xl font-semibold'>Price: $ 20.00</p>
-                      </div>
-                    </div> */}
+                   
                 </div>
+                <div className='text-center flex items-center justify-center mt-3 mb-5'><button className='border border-orange-600 px-5 py-3 rounded-xl flex items-center justify-center'>More Services</button></div>
         </div>
     );
 };
