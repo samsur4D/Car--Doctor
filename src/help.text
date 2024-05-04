@@ -1,0 +1,22 @@
+const firebaseConfig = {
+apiKey:import.meta.env.Vite_apiKey ,
+authDomain:import.meta.env.Vite_authDomain ,
+projectId:import.meta.env.Vite_projectId ,
+storageBucket:import.meta.env.Vite_storageBucket ,
+messagingSenderId:import.meta.env.Vite_messagingSenderId ,
+appId:import.meta.env.Vite_appId ,
+};
+
+
+
+
+
+
+const firebaseConfig = {
+apiKey: "AIzaSyAgk9tay0GNIips3iwHNLZ5Z_Q43VtmSao",
+authDomain: "car-project-36e8e.firebaseapp.com",
+projectId: "car-project-36e8e",
+storageBucket: "car-project-36e8e.appspot.com",
+messagingSenderId: "246276022238",
+appId: "1:246276022238:web:235fa6f4a63fdecfb7c74f",
+};

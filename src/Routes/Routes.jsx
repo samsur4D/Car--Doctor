@@ -3,6 +3,7 @@ import Real from "../Layout/Real";
 import Home from "../Pages/Home/Home";
 import Footer from "../Pages/Shared/Footer/Footer";
 import Login from "../Pages/Login";
+import Register from "../Pages/Shared/Navber/Register";
 
 
 const router = createBrowserRouter([
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
         {
           path: "/login",
           element: <Login></Login>
+        },
+        {
+          path: "/register",
+          element: <Register></Register>
         }
         
       ]
