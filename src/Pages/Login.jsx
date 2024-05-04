@@ -28,15 +28,39 @@ const {loginUser , setUser , googleLogin , facebookLogin , githubLogin } = useCo
  }
     const handelGoogleLogin = () =>{
 		googleLogin()
-		.then(result => console.log(result.user))
+		.then(result => {
+			setUser(result.user)
+			Swal.fire({
+				icon: "success",
+				title: "Google Login Complete",
+				showConfirmButton: false,
+				timer: 1500
+			  });
+		})
 	}
     const handelFacebookLogin = () =>{
 		facebookLogin()
-		.then(result => console.log(result.user))
+		.then(result => {
+			setUser(result.user)
+			Swal.fire({
+				icon: "success",
+				title: "Facebook Login Complete",
+				showConfirmButton: false,
+				timer: 1500
+			  });
+		})
 	}
 	const handlegithubLogin = () =>{
 		githubLogin()
-		.then(result => setUser(result.user))
+		.then(result => {
+			setUser(result.user)
+			Swal.fire({
+				icon: "success",
+				title: "Github Login Complete",
+				showConfirmButton: false,
+				timer: 1500
+			  });
+		})
 	}
 
     return (
