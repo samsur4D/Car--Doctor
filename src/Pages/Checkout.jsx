@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import { AuthContext } from "../Components/AuthProvider";
+import Swal from 'sweetalert2'
+
 
 const Checkout = () => {
   const { id } = useParams();
@@ -40,6 +42,15 @@ const Checkout = () => {
     .then(res => res.json())
     .then(data => {
         console.log(data);
+        form.reset();
+        if(data.insertedId){
+            Swal.fire({
+                icon: "success",
+                title: "Your Order iS Confirm",
+                showConfirmButton: false,
+                timer: 1500
+              });
+        }
     })
 
   };

@@ -5,6 +5,8 @@ import Footer from "../Pages/Shared/Footer/Footer";
 import Login from "../Pages/Login";
 import Register from "../Pages/Shared/Navber/Register";
 import Checkout from "../Pages/Checkout";
+import Bookingss from "../Pages/Bookingss";
+import Protectroute from "../Protectroute";
 
 
 const router = createBrowserRouter([
@@ -28,6 +30,10 @@ const router = createBrowserRouter([
           path: "/checkout/:id",
           element: <Checkout></Checkout>,
           loader: ({params}) => fetch(`http://localhost:5000/services/${params.id}`)
+        },
+        {
+          path: "/bookingss",
+          element:   <Protectroute> <Bookingss></Bookingss> </Protectroute>
         }
         
       ]
