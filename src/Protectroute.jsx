@@ -10,7 +10,7 @@ const Protectroute = ({ children }) => {
     const { user } = useContext(AuthContext);
     const location = useLocation();
     const [loading, setLoading] = useState(true);
-
+  console.log(location.pathname);
 
 
 
@@ -37,7 +37,7 @@ const Protectroute = ({ children }) => {
         return children;
     } else {
         // If user is not authenticated, navigate to login page
-        return <Navigate to="/login" state={{ from: location.pathname }} />;
+        return <Navigate to="/login" state={location.pathname} />;
     }
 };
 

@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Components/AuthProvider";
 import Bookrow from "../Components/Bookrow";
+import axios from "axios";
 
 const Bookingss = () => {
   const { user } = useContext(AuthContext);
@@ -9,9 +10,15 @@ const Bookingss = () => {
   const url = `http://localhost:5000/bookings?email=${user.email}`;
 
   useEffect(() => {
-    fetch(url)
-      .then((res) => res.json())
-      .then((data) => setBookings(data));
+      
+    axios.get(url , {withCredentials: true})
+    .then(res => {
+       setBookings(res.data);
+    })
+
+    // fetch(url)
+    //   .then((res) => res.json())
+    //   .then((data) => setBookings(data));
   }, [url]);
 
   const handelDelete = (id) => {
@@ -57,7 +64,7 @@ const Bookingss = () => {
 
   return (
     <div>
-      <h2 className="text-6xl">{bookings.length}</h2>
+      <h2 className="text-6xl font-bold flex items-center justify-center mt-5 mb-5 ">MY BOOKINGS - - - {bookings.length} ❤</h2>
       {/* ---------------------------------------- */}
       <div className="overflow-x-auto">
         <table className="table">
