@@ -1,7 +1,9 @@
-import React, { useContext, useEffect, useState } from "react";
+import  { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Components/AuthProvider";
 import Bookrow from "../Components/Bookrow";
 import axios from "axios";
+import Swal from "sweetalert2";
+import { Result } from "postcss";
 
 const Bookingss = () => {
   const { user } = useContext(AuthContext);
@@ -19,25 +21,40 @@ const Bookingss = () => {
     // fetch(url)
     //   .then((res) => res.json())
     //   .then((data) => setBookings(data));
+    
   }, [url]);
 
-  const handelDelete = (id) => {
-    const proceed = confirm("Delete korbi?");
-    if (proceed) {
-      fetch(`http://localhost:5000/bookings/${id}`, {
-        method: "DELETE",
+const handelDelete = (id) =>{
+   Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes, delete it!"
+   }).then((result)=>{
+     if(result.isConfirmed){
+      fetch(`http://localhost:5000/bookings/${id}` , {
+        method: 'DELETE'
       })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data);
-          if (data.deletedCount > 0) {
-            alert("Deleted Successfully");
-            const remaining = bookings.filter((booking) => booking._id !== id);
-            setBookings(remaining);
-          }
-        });
-    }
-  };
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        if(data.deletedCount > 0){
+          const remaining = bookings.filter((booking) => booking._id !== id);
+          setBookings(remaining);
+          Swal.fire({
+            title: "Deleted!",
+            text: "Your file has been deleted.",
+            icon: "success"
+          });
+
+        }
+      })
+     }
+   })
+}
 
   const handelConfirm = (id) => {
     fetch(`http://localhost:5000/bookings/${id}` , {

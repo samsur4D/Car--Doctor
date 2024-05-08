@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react';
 import pic from '../../../assets/images/login/login.svg'
 import { AuthContext } from '../../../Components/AuthProvider';
 import Swal from 'sweetalert2'
+import axios from 'axios';
+import { Navigate } from 'react-router-dom';
 
 const Register = () => {
 
@@ -56,8 +58,20 @@ const handelRegister = (e) =>{
         showConfirmButton: false,
         timer: 1500
       });
-   })
-   .catch(error => setError(error.message.split("/")[1]))
+
+      // axios.post("http://localhost:5000/jwt", result.user , {withCredentials: true} )
+      // .then((res) => {
+      //   console.log(res.data);
+      //   if(res.data.success){
+      //   Navigate(location.state ? location.state : "/");
+      //   }
+      // })
+  
+        })
+        .catch((error) => setError(error.message.split("/")[1]));
+
+   
+   
 }
 
 

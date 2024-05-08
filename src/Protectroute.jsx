@@ -10,7 +10,7 @@ const Protectroute = ({ children }) => {
     const { user } = useContext(AuthContext);
     const location = useLocation();
     const [loading, setLoading] = useState(true);
-  console.log(location.pathname);
+//   console.log(location.pathname);
 
 
 

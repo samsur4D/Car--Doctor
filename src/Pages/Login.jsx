@@ -33,13 +33,13 @@ const Login = () => {
           timer: 1500,
         });
     
-		axios.post("http://localhost:5000/jwt", user , {withCredentials: true} )
-		.then((res) => {
-		  console.log(res.data);
-		  if(res.data.success){
-			navigate(location.state ? location.state : "/");
-		  }
-		})
+		// axios.post("http://localhost:5000/jwt", user , {withCredentials: true} )
+		// .then((res) => {
+		//   console.log('token aise re' , res.data);
+		//   if(res.data.success){
+		// 	navigate(location.state ? location.state : "/");
+		//   }
+		// })
 
       })
       .catch((error) => setError(error.message.split("/")[1]));
@@ -47,9 +47,8 @@ const Login = () => {
   const handelGoogleLogin = () => {
     googleLogin()
 	.then((result) => {
-      const logedInuser = result.user;
-      console.log(logedInuser);
-      const user = { email };
+      // const logedInuser = result.user;
+      // console.log(logedInuser);
       setUser(result.user);
 
       Swal.fire({
@@ -60,11 +59,16 @@ const Login = () => {
       });
       //  navigate(location.state ? location.state : '/')
       // get access token
-	  axios.post("http://localhost:5000/jwt", user )
-	  .then((res) => {
-		console.log(res.data);
-	  })
-    });
+      // axios.post("http://localhost:5000/jwt", logedInuser , {withCredentials: true} )
+      // .then((res) => {
+      //   console.log(res.data);
+      //   if(res.data.success){
+      //   navigate(location.state ? location.state : "/");
+      //   }
+      // })
+  
+        })
+        .catch((error) => setError(error.message.split("/")[1]));
   };
   const handelFacebookLogin = () => {
     facebookLogin().then((result) => {
@@ -79,16 +83,31 @@ const Login = () => {
     });
   };
   const handlegithubLogin = () => {
-    githubLogin().then((result) => {
+    githubLogin()
+    .then((result) => {
+      const logedInuser = result.user;
+      console.log(logedInuser);
       setUser(result.user);
+
       Swal.fire({
         icon: "success",
         title: "Github Login Complete",
         showConfirmButton: false,
         timer: 1500,
       });
-      navigate(location.state ? location.state : "/");
+      // navigate(location.state ? location.state : "/");
+      // axios.post("http://localhost:5000/jwt", logedInuser , {withCredentials: true} )
+      // .then((res) => {
+      //   console.log(res.data);
+      //   if(res.data.success){
+      //   navigate(location.state ? location.state : "/");
+      //   }
+      // })
+  
+      
+      //   .catch((error) => setError(error.message.split("/")[1]));
     });
+    
   };
 
   return (

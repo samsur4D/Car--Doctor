@@ -69,7 +69,7 @@ const Navber = () => {
 
 {
   user ? 
-    <div className='flex'><img className='rounded-full h-20 mr-3 ' src={user.photoURL} alt="" /><button onClick={()=>logout()}  className='bg-orange-600 px-5 font-bold rounded-lg text-white'>Logout</button></div>
+    <div className='flex'><img className='rounded-full h-20 mr-3 ' src={user.photoURL} alt="" /><button onClick={()=>logout()}  className='bg-orange-400 px-5 font-bold rounded-lg text-white'>Logout</button></div>
     : ""
 
 }
